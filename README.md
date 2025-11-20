@@ -63,6 +63,42 @@ The notebook is intended for **learning purposes**, and the trained model can la
 ---
 
 ## 🏗️ Project Structure
+```
+  Heart-Disease-Prediction--FusionX1.0/
+  │
+  ├── models/
+  │   ├── knn_heart_disease_model.pkl
+  │   ├── knn_tuned_model.pkl
+  │   └── preprocessor.pkl
+  │
+  ├── notebook/
+  │   └── notebook.ipynb
+  │
+  ├── processed_data/
+  │   ├── x_test.csv
+  │   ├── X-train.csv
+  │   ├── y_test.csv
+  │   └── y_train.csv
+  │
+  ├── raw/
+  │   └── notebook.ipynb
+  │
+  ├── static/
+  │   └── css/
+  │       └── style.css
+  │
+  ├── templates/
+  │   ├── index.html
+  │   └── result.html
+  │
+  ├── app.py
+  ├── requirements.txt
+  |
+  ├── README.md
+  ├── LICENSE
+  └── .gitattributes
+
+```
 
 ## 📂 Dataset
 
