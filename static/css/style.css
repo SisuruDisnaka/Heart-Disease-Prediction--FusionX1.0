@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary: #0d6efd;
+    --primary-light: #4b8df7;
+    --bg-light: #f8f9ff;
+    --bg-dark: #121212;
+    --text-light: #ffffff;
+    --text-dark: #212529;
+}
+
+/* BODY STYLES */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #f8f9ff);
+    min-height: 100vh;
+    transition: background 0.4s, color 0.4s;
+}
+/* DARK MODE INPUT TEXT */
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background: #1f1f1f;
+    color: #fff;              /* text inside input */
+    border-color: #444;
+}
+body.dark-mode .form-label {
+    color: #ddd;
+}
+
+
+/* DARK MODE PLACEHOLDER */
+body.dark-mode .form-control::placeholder {
+    color: #aaa;             /* placeholder text */
+    opacity: 1;
+}
+
+/* DARK MODE BODY */
+body.dark-mode {
+    background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+    color: var(--text-light);
+}
+
+/* NAVBAR / HERO */
+.navbar {
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    padding: 1rem 1.5rem;
+    border-radius: 0 0 18px 18px;
+    transition: background 0.3s;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+/* DARK MODE NAVBAR */
+body.dark-mode .navbar {
+    background: linear-gradient(90deg, #0b3d91, #2451b2);
+}
+
+/* HERO TEXT */
+.navbar-text {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* CARD */
+.card {
+    border-radius: 18px;
+    border: none;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s, background 0.4s;
+    animation: fadeIn 0.45s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* DARK MODE CARD */
+body.dark-mode .card {
+    background: rgba(30, 30, 30, 0.85);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* FORM CONTROL ANIMATIONS */
+.form-control,
+.form-select {
+    border-radius: 12px;
+    padding: 12px 14px;
+    border: 1px solid #ced4da;
+    transition: 0.25s ease-in-out, box-shadow 0.25s;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15);
+    transform: scale(1.02);
+}
+
+/* DARK MODE FORM */
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background: #1f1f1f;
+    color: var(--text-light);
+    border-color: #444;
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+    box-shadow: 0 0 0 4px rgba(75, 141, 247, 0.25);
+}
+
+/* BUTTONS */
+.btn-primary {
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border: none;
+    padding: 12px 26px;
+    font-size: 1rem;
+    border-radius: 12px;
+    transition: 0.25s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #0b5ed7, #3576e8);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    padding: 10px 22px;
+    border-radius: 12px;
+}
+
+/* DARK MODE BUTTONS */
+body.dark-mode .btn-primary {
+    background: linear-gradient(90deg, #0b3d91, #2451b2);
+}
+
+/* Result Page */
+.lead strong {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* DARK MODE RESULT */
+body.dark-mode .lead strong {
+    color: #7abaff;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 30px;
+    opacity: 0.8;
+}
+
+/* INPUT SUMMARY */
+ul li {
+    margin-bottom: 6px;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* DARK MODE TOGGLE BUTTON */
+#darkModeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background: var(--primary);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.2s, background 0.3s;
+}
+
+#darkModeToggle:hover {
+    transform: scale(1.1);
+    background: var(--primary-light);
+}

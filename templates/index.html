@@ -1,0 +1,191 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FusionX 1.0 — Heart Diseases Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+      <div class="container">
+        <a class="navbar-brand" href="#">FusionX 1.0</a>
+        <span class="navbar-text text-white">Heart Diseases Predictor</span>
+      </div>
+    </nav>
+    <!-- Dark Mode Toggle -->
+  <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
+
+
+    <main class="container">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h4 class="card-title mb-3">Patient Input</h4>
+          <form method="post" action="/predict">
+            <div class="row g-3">
+              <div class="col-md-2">
+                <label class="form-label">Age</label>
+                <input name="Age" class="form-control" type="number" step="1" min="0" placeholder="e.g. 56">
+              </div>
+
+              <div class="col-md-3">
+                <label class="form-label">Gender</label>
+                <select name="Gender" class="form-select">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+
+              <div class="col-md-3">
+                <label class="form-label">Blood Pressure</label>
+                <input name="Blood Pressure" class="form-control" type="number" step="0.1" placeholder="e.g. 153">
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Cholesterol Level</label>
+                <input name="Cholesterol Level" class="form-control" type="number" step="0.1" placeholder="e.g. 155">
+              </div>
+
+              <!-- Exercise Habits -->
+              <div class="col-md-4">
+                <label class="form-label">Exercise Habits</label>
+                <select name="Exercise Habits" class="form-select">
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select>
+              </div>
+
+              <!-- Binary toggles -->
+              <div class="col-md-4">
+                <label class="form-label">Smoking</label>
+                <select name="Smoking" class="form-select">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Family Heart Disease</label>
+                <select name="Family Heart Disease" class="form-select">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="col-md-3">
+                <label class="form-label">Diabetes</label>
+                <select name="Diabetes" class="form-select">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="col-md-3">
+                <label class="form-label">BMI</label>
+                <input name="BMI" class="form-control" type="number" step="0.01" placeholder="e.g. 24.99">
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">High Blood Pressure</label>
+                <select name="High Blood Pressure" class="form-select">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Low HDL Cholesterol</label>
+                <select name="Low HDL Cholesterol" class="form-select">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">High LDL Cholesterol</label>
+                <select name="High LDL Cholesterol" class="form-select">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Alcohol Consumption</label>
+                <select name="Alcohol Consumption" class="form-select">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Stress Level</label>
+                <select name="Stress Level" class="form-select">
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Sleep Hours</label>
+                <input name="Sleep Hours" class="form-control" type="number" step="0.1" placeholder="e.g. 7.5">
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Sugar Consumption</label>
+                <select name="Sugar Consumption" class="form-select">
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Triglyceride Level</label>
+                <input name="Triglyceride Level" class="form-control" type="number" step="0.1" placeholder="e.g. 342">
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Fasting Blood Sugar</label>
+                <input name="Fasting Blood Sugar" class="form-control" type="number" step="0.1" placeholder="e.g. 120">
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">CRP Level</label>
+                <input name="CRP Level" class="form-control" type="number" step="0.01" placeholder="e.g. 12.96">
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Homocysteine Level</label>
+                <input name="Homocysteine Level" class="form-control" type="number" step="0.01" placeholder="e.g. 12.38">
+              </div>
+
+            </div>
+
+            <div class="mt-4 text-end">
+              <button type="submit" class="btn btn-primary btn-lg">Predict</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <footer class="mt-4 text-muted text-center">
+        <small>FusionX 1.0 &mdash; Heart Diseases Predictor</small>
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const toggleBtn = document.getElementById('darkModeToggle');
+      toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+      });
+    </script>
+
+  </body>
+</html>
+
